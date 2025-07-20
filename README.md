@@ -72,12 +72,3 @@ Pygame is employed to play background music during workout sessions, enhancing t
 
 ---
 
-## Project Structure
-
-├── main.py # Main script to run the application
-├── assets/ # Folder containing images, icons, and audio files
-│ ├── pic.png # Sample image assets
-│ ├── browse_back.png # UI navigation icons
-│ └── background_music.mp3 # Background music file for workouts
-├── README.md # Project documentation (this file)
-└── requirements.txt # List of required Python libraries
