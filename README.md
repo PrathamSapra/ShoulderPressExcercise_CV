@@ -1,74 +1,98 @@
-# Shoulder Press Exercise Analysis using Computer Vision
+# 💪 CV-Based Shoulder Press Exercise Analysis
+
+## 🧠 Overview
+
+This project is a **Computer Vision-based real-time exercise analysis tool** that helps users perform **shoulder press exercises** with proper posture and form. It uses **OpenCV** and **MediaPipe** to detect and analyze body movements, providing **live posture feedback**, **rep counting**, and **calorie estimation**. Users can choose between a **live webcam stream** or **pre-recorded videos** for analysis.
+
+> The tool features a **graphical user interface (GUI)** built with **Tkinter**, along with engaging visuals, background music, goal setting, and a performance summary screen.
 
 ---
 
-## Table of Contents
-- [Overview](#overview)  
-- [Features](#features)  
-- [Technologies Used](#technologies-used)  
-- [How It Works](#how-it-works)  
-- [Project Structure](#project-structure)  
-- [Getting Started](#getting-started)  
-- [Running the Application](#running-the-application)  
-- [Future Enhancements](#future-enhancements)  
-- [License](#license)  
+## 🏋️‍♂️ Key Features
+
+- 📸 **Live Camera or Recorded Video Mode**
+- 🧍‍♂️ Real-time **pose estimation** using **MediaPipe**
+- 🔄 **Shoulder and elbow angle** calculation to validate posture
+- ✅ **Correct/Incorrect posture classification**
+- 🔢 **Repetition counter** and **set tracking**
+- ⏱️ **Timer** for workout duration
+- 🔥 **Calories burned** estimation based on user’s weight and time
+- 📊 **Result Summary** with total reps, duration, and calories burned
+- 🎯 **Set personal workout goals**
+- 🎵 Optional **background music**
+- 🖼️ Visual progress bars and animations
 
 ---
 
-## Overview
+## 📁 Project Structure
 
-This project is a **Computer Vision-based Shoulder Press Exercise Analyzer** developed in Python. It uses your webcam or pre-recorded videos to monitor your shoulder press exercise form in real time. It provides instant feedback on posture, counts repetitions and sets, tracks workout duration, and estimates calories burned. The application includes a gamified and user-friendly graphical interface with visual progress bars and motivational background music to help keep you engaged and motivated throughout your workout.
-
----
-
-## Features
-
-- **Real-time form correction and posture analysis:** Uses pose detection to analyze joint angles and provide immediate feedback.  
-- **Repetition and set counting:** Automatically counts valid reps and sets based on form correctness.  
-- **Custom workout goal setup:** Users can set desired numbers of reps, sets, or workout duration.  
-- **Calorie estimation:** Estimates calories burned based on workout time and exercise intensity (using MET calculations).  
-- **Visual feedback:** Progress bars and angle measurements are displayed to help users understand their performance.  
-- **Workout timer:** Tracks the duration of each session.  
-- **Result summary dashboard:** Shows total workout time, calories burned, reps completed, and goal achievements at session end.  
-- **Supports both live camera and pre-recorded video input:** Flexible input options for different use cases.
+```
+📦 Shoulder_Press_Analysis/
+├── Shoulder_Press_Analysis.py   # Main application script
+├── 📁 assets/                   # Contains all images and icons (e.g., pic.png, im.png, camera.png)
+├── 📁 sound/                    # Background music files for the session
+```
 
 ---
 
-## Technologies Used
+## ⚙️ Technologies Used
 
-### 1. OpenCV  
-OpenCV is used for video capturing (from webcam or video files), frame processing, and displaying annotated video frames with posture visuals in real time.
-
-### 2. Mediapipe  
-Mediapipe provides highly accurate pose detection and extracts 33 body landmark coordinates. This project uses landmarks like shoulder, elbow, and wrist to calculate joint angles critical for shoulder press form analysis.
-
-### 3. Tkinter (GUI)  
-Tkinter is Python’s built-in graphical user interface toolkit. It creates the user interface window displaying the live video feed, workout controls, progress bars, posture status messages, and session summaries.
-
-### 4. PIL (Pillow)  
-The Pillow library is used to convert OpenCV’s BGR frames into an image format compatible with Tkinter’s canvas for smooth and real-time GUI rendering.
-
-### 5. Pygame  
-Pygame is employed to play background music during workout sessions, enhancing the user’s engagement and motivation.
+| Purpose               | Library / Tool        |
+|----------------------|-----------------------|
+| Pose Estimation       | MediaPipe             |
+| Video Processing      | OpenCV                |
+| GUI                   | Tkinter + PIL         |
+| Audio Playback        | Pygame                |
+| Math & Utilities      | NumPy, Math, Threading|
 
 ---
 
-## How It Works
+## 🚀 How to Run
 
-1. **Pose Detection:**  
-   The application uses Mediapipe’s pose estimation to detect and track body landmarks in each video frame.
+### 🖥️ Requirements
 
-2. **Angle Calculation:**  
-   Using the coordinates of shoulder, elbow, and wrist landmarks, it calculates elbow and shoulder joint angles with geometric formulas.
+Make sure the following Python libraries are installed:
 
-3. **Form Analysis:**  
-   The joint angles are compared against predefined ideal ranges for a correct shoulder press form. When angles meet the criteria, the program counts a repetition and displays a "CORRECT" status in green. Incorrect form prompts corrective feedback.
+```bash
+pip install opencv-python mediapipe numpy pygame pillow
+```
 
-4. **Progress Monitoring:**  
-   The GUI shows progress bars indicating how close the user is to completing reps, sets, or workout duration goals. A timer tracks the total session time.
+### ▶️ Run the App
 
-5. **Result Summary:**  
-   Once the workout finishes or the goal is reached, a summary screen shows total time spent, calories burned (calculated based on the duration and MET values for shoulder press), and overall performance statistics.
+```bash
+python Shoulder_Press_Analysis.py
+```
+
+> ⚠️ Make sure you have a working webcam and all image/audio assets are in place in the expected directories (`assets/`, `sound/`).
+
+---
+
+## 📊 Output Summary
+
+At the end of the workout, the app displays:
+
+- 🎯 Whether the target was achieved
+- ⏰ Total duration of the session
+- 🔁 Total reps completed
+- 🔥 Calories burned (based on MET formula and user weight)
+
+---
+
+## 👨‍💻 Developed By
+
+**Ali Sajid** & **Noor Sultan**  
+Mechatronics and Control Engineering  
+University of Engineering and Technology, Lahore  
+**Under supervision of:** Prof. Ahsan Naeem
+
+---
+
+## 🌱 Future Enhancements
+
+- Add more exercises (e.g., squats, lunges, push-ups)
+- Posture correction suggestions
+- Cloud storage for session data
+- Integration with fitness wearables
 
 ---
 
